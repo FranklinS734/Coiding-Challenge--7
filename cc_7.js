@@ -17,7 +17,7 @@ const calculateHourlyWage = function(salary, hoursPerWeek) {
     return `Hourly Wage: $${hourlyWage.toFixed(2)}`;
 };
 
-// Test cases
+// Test Data
 console.log(calculateHourlyWage(52000, 40)); // Expected: "Hourly Wage: $25.00"
 console.log(calculateHourlyWage(75000, 35)); // Expected: "Hourly Wage: $41.21"
 
@@ -30,6 +30,27 @@ const calculateLoyaltyDiscount = (amount, years) => {
     return `Discounted Price: $${discountedPrice.toFixed(2)}`;
 };
 
-// Test cases
+// Test Data
 console.log(calculateLoyaltyDiscount(100, 6)); // Expected: "Discounted Price: $85.00"
 console.log(calculateLoyaltyDiscount(200, 2)); // Expected: "Discounted Price: $190.00"
+
+// Task 4: Parameters and Arguments
+function calculateShippingCost(weight, location, expedited = false) {
+    // Set base costs based on location
+    let baseCost;
+  if (location === "USA") {
+    baseCost = 5 + 0.5 * weight;
+  } else if (location === "Canada") {
+    baseCost = 10 + 0.7 * weight;
+  } else {
+    return "Invalid location";
+  }
+  if (expedited) {
+    baseCost += 10;
+  }
+  return `Shipping Cost: $${baseCost.toFixed(2)}`;
+}
+
+// Test Data
+console.log(calculateShippingCost(10, "USA", true)); // Expected: "Shipping Cost: $20.00"
+console.log(calculateShippingCost(5, "Canada", false)); // Expected: "Shipping Cost: $13.50"
