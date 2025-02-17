@@ -98,6 +98,6 @@ function calculateGrowth(years, revenue) {
     return calculateGrowth(years + 1, revenue * 1.05);
 }
 
-// Test Data
+// Test Data output
 console.log(calculateGrowth(8, 1000)); // Expected: "Projected Revenue: $1102.50"
 console.log(calculateGrowth(5, 5000)); // Expected: "Projected Revenue: $6381.41"
